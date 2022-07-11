@@ -153,5 +153,137 @@
   "MultiAsset": "MultiAssetV0",
   "Xcm": "XcmV0",
   "XcmOrder": "XcmOrderV0",
-  "MultiLocation": "MultiLocationV0"
+  "MultiLocation": "MultiLocationV0",
+  "AssetOptions": {
+    "type_mapping": [
+      [
+        "initialIssuance",
+        "Compact<Balance>"
+      ],
+      [
+        "permissions",
+        "PermissionLatest"
+      ]
+    ],
+    "type": "struct"
+  },
+  "Owner": {
+    "type_mapping": [
+      [
+        "None",
+        "Null"
+      ],
+      [
+        "Address",
+        "AccountId"
+      ]
+    ],
+    "type": "enum"
+  },
+  "PermissionsV1": {
+    "type_mapping": [
+      [
+        "update",
+        "Owner"
+      ],
+      [
+        "mint",
+        "Owner"
+      ],
+      [
+        "burn",
+        "Owner"
+      ]
+    ],
+    "type": "struct"
+  },
+  "PermissionVersions": {
+    "type_mapping": [
+      [
+        "V1",
+        "PermissionsV1"
+      ]
+    ],
+    "type": "enum"
+  },
+  "AssetInfo": {
+    "type_mapping": [
+      [
+        "symbol",
+        "Vec<u8>"
+      ],
+      [
+        "decimalPlaces",
+        "u8"
+      ],
+      [
+        "existentialDeposit",
+        "u64"
+      ]
+    ],
+    "type": "struct"
+  },
+  "PermissionLatest": "PermissionsV1",
+  "WithdrawReasons": {
+    "type": "set",
+    "bit_length": 8,
+    "value_list": [
+      "TransactionPayment",
+      "Transfer",
+      "Reserve",
+      "Fee",
+      "Tip"
+    ]
+  },
+  "BalanceLock45": {
+    "type_mapping": [
+      [
+        "id",
+        "LockIdentifier"
+      ],
+      [
+        "amount",
+        "Balance"
+      ],
+      [
+        "reasons",
+        "WithdrawReasons"
+      ]
+    ],
+    "type": "struct"
+  },
+  "BalanceLock": {
+    "type_mapping": [
+      [
+        "id",
+        "LockIdentifier"
+      ],
+      [
+        "amount",
+        "Balance"
+      ],
+      [
+        "reasons",
+        "Reasons"
+      ]
+    ],
+    "type": "struct"
+  },
+  "BalanceInformation": {
+    "type_mapping": [
+      [
+        "reserved",
+        "Balance"
+      ],
+      [
+        "staked",
+        "Balance"
+      ],
+      [
+        "available",
+        "Balance"
+      ]
+    ],
+    "type": "struct"
+  }
 }

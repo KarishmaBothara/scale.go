@@ -39,7 +39,7 @@ var signedExts = map[string]bool{
 	"CheckMortality":           false,
 	"CheckNonce":               false,
 	"CheckWeight":              false,
-	"ChargeTransactionPayment": false,
+	"ChargeTransactionPayment": true,
 	"CheckBlockGasLimit":       false,
 	"ChargeAssetTxPayment":     true,
 }
